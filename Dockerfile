@@ -4,7 +4,7 @@ FROM appropriate/curl as downloader
 RUN curl -OL https://raw.githubusercontent.com/mapbox/postgis-vt-util/v1.0.0/postgis-vt-util.sql
 
 
-FROM openmaptiles/postgis:2.9
+FROM sophox/postgis
 
 # Using VT_UTIL_DIR var allows user to override it with some path, and mount a volume with the custom version
 ENV VT_UTIL_DIR=/opt/postgis-vt-util \
