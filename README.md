@@ -16,3 +16,14 @@ docker run --rm \
     -e POSTGRES_PORT="5432" \
     openmaptiles/import-sql
 ```
+
+Optionally you may pass extra arguments to `psql` by using `PSQL_OPTIONS` environment variable. This example makes psql echo all commands read from a file into stdout.
+
+```bash
+    -e PSQL_OPTIONS=-a
+```
+
+PSQL_OPTIONS allows multiple arguments as well, and understands quotes, e.g. you can pass a whole query as a single argument surrounded by quotes:  
+```bash
+    -e PSQL_OPTIONS="-a -c 'SELECT ...'"
+```
